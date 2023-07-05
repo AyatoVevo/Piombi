@@ -1,0 +1,12 @@
+i{
+    transition: 0.3s;
+}
+
+i:hover{
+    color: rgb(154, 154, 154);
+    scale: 1.1;
+}
+
+.bg-footer{
+    background-color: var(--bl);
+}

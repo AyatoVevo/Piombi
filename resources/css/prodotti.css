@@ -1,0 +1,99 @@
+.bg-header-prodotti{
+    height: 16rem;
+    
+    background-image: radial-gradient(circle at 70%, transparent,black, rgb(0, 0, 0)) ,url(/public/img/fishingleads.jpg);
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.text-custom-prodotti{
+    font-weight: 550;
+    color: var(--wh);
+}
+
+.bg-products{
+    background-image: linear-gradient(to bottom, black, var(--bl));
+}
+
+.card{
+    background-color: rgb(255, 255, 255);
+    border-radius: 0px;
+}
+
+
+/* homepage */
+.bg-more{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)) ,url(/public/img/shrimp-boats-3637745.jpg);
+    height: 30rem;
+    background-position-y: center;
+    background-size: cover;
+}
+
+.col1{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/public/img/dalancio.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.col2{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/public/img/feeders.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.col3{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/public/img/inline\ quadrati2.png);
+    background-size: cover;
+    background-position: center;
+}
+
+
+.col-custom{
+
+    height: 26rem;
+    padding: 0px;
+    cursor: pointer;
+    transition: 0.5s;
+    background-size: 100%;
+    
+    
+}
+
+.col-custom:hover{
+    background-size: 110%;
+    
+}
+
+.anchorsize{
+    width: 100%;
+    height: 100%;
+}
+
+.row-height{
+    height: 100%;
+}
+
+/* categories */
+.catText{
+    transition: 0.4s;
+}
+
+.catText:hover{
+    scale: 1.1;
+}
+
+@media screen and (max-width: 700px) {
+    .bg-header-prodotti{
+        height: 10rem;
+    }
+
+    .bg-more{
+        height: 20rem;
+    }
+
+    .col-custom{
+        height: 18rem;
+    }
+}

@@ -1,0 +1,43 @@
+:root{
+    --bl: rgb(41, 40, 40);
+    --wh: rgb(240, 236, 236);
+    --gr: rgb(235, 164, 65);
+}
+
+.bl{
+    color: var(--bl);
+}
+
+.bg-black{
+    background-color: black;
+}
+.wh{
+    color: var(--wh);
+}
+
+.m-nav{
+    margin-top: 80px;
+}
+
+.wid-100{
+    width: 100vw;
+    
+}
+
+.hei-100{
+    height: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: var(--bl);
+}
+
+.gutter-custom{
+    --bs-gutter-x: 0rem;
+}
+
+
+
+
+

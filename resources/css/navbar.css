@@ -1,0 +1,36 @@
+.bg-navbar{
+    background-color: var(--bl);
+}
+
+.logo{
+    width: 60px;
+}
+
+.navbar-brand{
+    transition: 0.4s;
+
+}
+
+.navbar-brand:hover{
+    scale: 1.1;
+}
+
+.nav-link{
+    color: var(--wh) !important;
+}
+
+.nav-item{
+    font-size: 20px;
+    font-weight: 500;
+
+    transition: 0.4s;
+}
+
+.nav-item:hover{
+   scale: 1.1;
+}
+
+li{
+    list-style: none;
+}
+

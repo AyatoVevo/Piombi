@@ -1,0 +1,20 @@
+.bg-header{
+    height: 35rem;
+    
+    background-image: radial-gradient(circle at 70%, transparent,black, rgb(0, 0, 0)) ,url(/public/img/fishingleads.jpg);
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.text-custom{
+    font-weight: 550;
+    color: var(--wh);
+}
+
+@media screen and (max-width: 700px) {
+    .bg-header{
+        height: 20rem;
+    }
+}
