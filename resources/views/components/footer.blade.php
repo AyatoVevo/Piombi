@@ -5,9 +5,9 @@
         <div class="row justify-content-between">
 
             <div class="col-12 col-md-6 col-lg-4 my-4">
-                <h3>Contatti</h3>
+                <h2 class="fs-4">Contatti</h2>
                 <p>Telefono: (+39) 327-001-7469</p>
-                <p>Email: placeholder</p>
+                <p>Email: piombidivale@gmail.com</p>
             </div>
 
             <div class="col-12 col-md-6 col-lg-4 my-4">
@@ -15,9 +15,9 @@
                     <!--Grid row-->
                     <div class="row d-flex justify-content-center">
                       <div class="col-12">
-                        <p class="pt-2">
-                          <strong>Iscriviti per ricevere promozioni e aggiornamenti!</strong>
-                        </p>
+                        <h2 class="pt-2 fs-5">
+                          Iscriviti per ricevere promozioni e aggiornamenti!
+                        </h2>
                       </div>
             
                       <div class="col-md-5 col-8">
@@ -42,7 +42,7 @@
             </div>
             
             <div class="col-12 col-md-6 col-lg-4 my-4 d-flex align-items-center justify-content-center">
-                <a href="https://www.instagram.com/amici_del_self_maker/" target="blank"><i class="wh fa-brands fa-2x fa-instagram"></i>
+                <a href="https://www.instagram.com/piombi.di.vale/" target="blank"><i class="wh fa-brands fa-2x fa-instagram"></i>
                 </a>
                 <a class="mx-5" href="https://www.facebook.com/profile.php?id=100075854293564&paipv=0&eav=AfZizyC3AfiJu5wlDi8fXkBU-oJIe1VYOUawgnvDKxM5_vBR4zc4FaHNy5uKso6ysKs&_rdr" target="blank"><i class="wh fa-brands fa-2x fa-facebook"></i></a>
                 <a href="https://www.youtube.com/@amicidelself-maker2963" target="blank"><i class="wh fa-brands fa-2x fa-youtube"></i></a>

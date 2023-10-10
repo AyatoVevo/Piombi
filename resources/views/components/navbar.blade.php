@@ -1,8 +1,8 @@
-<nav class="navbar navbar-expand-lg bg-navbar fixed-top ">
+<nav class="navbar navbar-expand-lg bg-navbar fixed-top">
     <div class="container-fluid">
 
       <a class="navbar-brand" href="{{route('welcome')}}">
-      <img src="img/logo.png" alt="logo" class="img-fluid logo"></a>
+      <img src="/img/logo.png" alt="logo" class="img-fluid logo"></a>
       
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa-solid fa-fish fa-2x wh"></i>
@@ -15,8 +15,12 @@
             <a class="nav-link active" aria-current="page" href="{{route('welcome')}}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{route('prodotti')}}">Tutti i prodotti</a>
+            <a class="nav-link active" aria-current="page" href="{{route('products')}}">Tutti i prodotti</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{route('order')}}">Ordina</a>
+          </li>
+          
 
         </ul>
 
@@ -26,12 +30,18 @@
             Benvenuto {{Auth::user()->name}}</a>
 
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="">Profilo</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a></li>
-              <form method="POST" action="{{route('logout')}}" id="form-logout" class="d-none">
-              @csrf
-              </form>
+                @if(Auth::user()->is_admin)
+                  <li><a class="dropdown-item" href="{{route('admin.dashboard')}}">Dashboard Admin</a></li>
+                  <li>
+                    <a class="dropdown-item" aria-current="page" href="{{route('product.create')}}">Create</a>
+                  </li>
+                  @endif
+                  <li><a class="dropdown-item" href="">Profilo</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#" onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">Logout</a></li>
+                  <form method="POST" action="{{route('logout')}}" id="form-logout" class="d-none">
+                    @csrf
+                  </form>
             </ul>
         </li>    
         @endauth

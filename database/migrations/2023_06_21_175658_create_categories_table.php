@@ -18,11 +18,17 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        $categories = ['Lancio', 'Feeder', 'Inline'];
+        $categories = [
+            'Lancio',
+            'Feeder',
+            'Inline',
+            'Gripper'];
 
         foreach($categories as $category){
             Category::create([
                 'name'=> $category,
+   
+                
             ]);
         }
     }

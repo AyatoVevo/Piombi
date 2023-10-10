@@ -1,6 +1,6 @@
 <x-layout>
-    <div class="container-fluid p-5 bg-info text-center text-white">
-        <div class="row justify-content-center">
+    <div class="container-fluid p-1 text-center text-white">
+        <div class="row justify-content-center m-nav">
             <h1 class="display-1">
                 Register
             </h1>

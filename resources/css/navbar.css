@@ -1,9 +1,10 @@
 .bg-navbar{
     background-color: var(--bl);
+    
 }
 
 .logo{
-    width: 60px;
+    width:  50px;
 }
 
 .navbar-brand{
@@ -17,6 +18,7 @@
 
 .nav-link{
     color: var(--wh) !important;
+    transition: 0.4s;
 }
 
 .nav-item{
@@ -26,9 +28,7 @@
     transition: 0.4s;
 }
 
-.nav-item:hover{
-   scale: 1.1;
-}
+
 
 li{
     list-style: none;

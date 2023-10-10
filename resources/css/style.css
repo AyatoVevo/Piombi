@@ -4,6 +4,17 @@
     --gr: rgb(235, 164, 65);
 }
 
+/* fonts */
+h1, h2{
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
+}
+
+p, a, h3, h4{
+    font-family: 'Roboto', sans-serif;
+}
+
+/* vars */
 .bl{
     color: var(--bl);
 }
@@ -16,7 +27,7 @@
 }
 
 .m-nav{
-    margin-top: 80px;
+    margin-top: 60px;
 }
 
 .wid-100{
@@ -30,14 +41,28 @@
 
 a{
     text-decoration: none;
-    color: var(--bl);
+    color: var(--wh);
+    transition: 0.4s;
 }
 
+a:hover{
+    scale:1.1;
+}
+
+.catBor{
+    border-bottom: ridge 2px var(--wh);
+}
 .gutter-custom{
     --bs-gutter-x: 0rem;
 }
 
+.card{
+    background-color: red;
+}
 
 
+.preserveLines {
+    white-space: pre-wrap;
+}
 
 

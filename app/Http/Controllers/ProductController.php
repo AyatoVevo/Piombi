@@ -2,30 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Mail\OrderRequestMail;
 use App\Models\Product;
+use App\Models\Category;
+use Illuminate\Auth\Events\Validated;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth')->except('index', 'show', 'byCategory');
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
+        $products = Product::all();
         
-            $products = [
-                new Product(['name' => 'Piombi 1', 'description' => 'piombi da lancio', 'img' => 'img\dalancioA.png', 'category' => 'Lancio']),
-                new Product(['name' => 'Piombi 2', 'description' => 'piombi da lancio esagonali', 'img' => 'img\dalancioB.png', 'category' => 'Lancio']),
-                new Product(['name' => 'Piombi 3', 'description' => 'ancoretto feeder', 'img' => 'img\feederA.png', 'category' => 'Feeder']),
-                new Product(['name' => 'Piombi 4', 'description' => 'feeder per pastura', 'img' => 'img\feederB.png', 'category' => 'Feeder']),
-                new Product(['name' => 'Piombi 5', 'description' => 'quadrato inline con silicone', 'img' => 'img\inline quadrati2.png', 'category' => 'Inline']),
-            ];
+    
 
-            
-
-          
-
-            return view('index', compact('products'));
+       
+        return view('product/index', compact('products'));
     }
 
     /**
@@ -33,7 +35,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('product.create');
     }
 
     /**
@@ -41,7 +43,24 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|min:2',
+            'description' => 'required|min:10',
+            'body' => 'required|min:10',
+            'image' => 'image|required',
+            'category' => 'required'
+        ]);
+
+        Product::create([
+            'name'=> $request->input('name'),
+            'description' => $request->input('description'),
+            'body' => $request->input('body'),
+            'img' => $request->file('image')->store('public/img'),
+            'category_id' => $request->category,
+            'user_id' => Auth::user()->id,
+        ]);
+
+        return redirect(route('products'))->with('message', 'Article inserted successfully');
     }
 
     /**
@@ -49,7 +68,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return view('products.show', compact('product'));
+        return view('product.show', compact('product'));
     }
 
     /**
@@ -57,7 +76,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        return view('product.edit', compact('product'));
     }
 
     /**
@@ -65,7 +84,28 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $request->validate([
+            'name' => 'required|unique:products,name,' . $product->id,
+            'body' => 'required|min:10',
+            'image' => 'image',
+            'category' => 'required'
+        ]);
+
+        $product->update([
+            'name'=> $request->name,
+            'description' => $request->description,
+            'body' => $request->body,
+            'image' => $request->image,
+            'category_id' => $request->category,
+        ]);
+
+        if($request->image){
+            Storage::delete($product->img);
+            $product->update([
+                'img' => $request->file('image')->store('public/img'),
+            ]);
+        }
+        return redirect(route('admin.dashboard'))->with('message', 'Article updated successfully');
     }
 
     /**
@@ -73,6 +113,42 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+        return redirect(route('admin.dashboard'))->with('message', 'Product eliminated correctly');
+    }
+
+    public function byCategory(Category $category){
+        $products = $category->products->sortByDesc('created_at');
+        return view('product.byCategory', compact('category', 'products'));
+    }
+
+    public function order(Request $request){
+        
+        $products = Product::all();
+        
+        return view('order', compact('products'));
+    }
+
+    public function orderSubmit(Request $request){
+        $request->validate([
+            'email' => 'required|email',
+            
+            'orders' => 'nullable|array',
+            'orders.*' => 'present',
+            'quantities' => 'nullable|array',
+            'quantities.*' => 'present'
+        ]);
+
+        
+
+        $user = Auth::user();
+        $email = $request->email;
+        $message = $request->message;
+        $orders = $request->input('orders');
+        $quantities = $request->input('quantities');
+
+        Mail::to('piombidivale@gmail.com')->send(new OrderRequestMail(compact('orders', 'email', 'message', 'quantities')));
+
+        return redirect(route('welcome'))->with('message', 'A breve la contatteremmo');
     }
 }

@@ -22,6 +22,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_admin',
     ];
 
     /**
@@ -46,4 +47,5 @@ class User extends Authenticatable
     public function products(){
         return $this->hasMany(Product::class);
     }
+
 }

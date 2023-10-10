@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
     {
         if(Schema::hasTable('categories')){
             $categories = Category::all();
-            View::Share(['categories'=>$categories]);
+            View::Share(['categories' => $categories]);
         }
     }
 }
