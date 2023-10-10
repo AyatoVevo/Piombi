@@ -1,0 +1,28 @@
+{
+  "public/img/dalancio.png": {
+    "file": "assets/dalancio-e16272d6.png",
+    "src": "public/img/dalancio.png"
+  },
+  "public/img/feeders.png": {
+    "file": "assets/feeders-7b92d9c3.png",
+    "src": "public/img/feeders.png"
+  },
+  "public/img/fishingleads.jpg": {
+    "file": "assets/fishingleads-ecb54a5e.jpg",
+    "src": "public/img/fishingleads.jpg"
+  },
+  "public/img/shrimp-boats-3637745.jpg": {
+    "file": "assets/shrimp-boats-3637745-68db79bf.jpg",
+    "src": "public/img/shrimp-boats-3637745.jpg"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-c1c81059.css",
+    "isEntry": true,
+    "src": "resources/css/app.css"
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-b2b9b6af.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  }
+}
