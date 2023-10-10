@@ -11,7 +11,7 @@
     <section class="container-fluid bg-more">
         <div class="row row-height">
             <div class="col-12 wh d-flex flex-column justify-content-center align-items-center">
-                <h2>Dai un occhiata ai nostri prodotti! ciao ciao</h2>
+                <h2>Dai un occhiata ai nostri prodotti! ciao ciao!</h2>
                 <i class="fa-solid fa-arrow-down fa-2x"></i>
             </div>
         </div>
