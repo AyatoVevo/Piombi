@@ -19,7 +19,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 */
 Route::get('/foo', function () {
     Artisan::call('storage:link');
-    });
+});
 
 Route::get('/', [PublicController::class , 'homepage'])->name('welcome');
 
