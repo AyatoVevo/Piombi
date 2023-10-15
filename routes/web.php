@@ -18,6 +18,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 Route::get('/linkstorage', [Artisan::call('storage:link')]);
+Route::get('/clearcache', [Artisan::call('cache:clear')]);
 
 Route::get('/', [PublicController::class , 'homepage'])->name('welcome');
 
