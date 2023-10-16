@@ -34,7 +34,7 @@
                 <div class="col-12 col-md-6 col-lg-4 my-5 d-flex justify-content-center">
                 
                     <div class="card" style="width: 18rem;">
-                        <img src="{{$product->img}}" class="img-fluid" alt="...">
+                        <img src="{{Storage::url($product->img)}}" class="img-fluid" alt="...">
                         <div class="card-body d-flex flex-column justify-content-around">
                             <h2 class="card-title fs-5 border-bottom border-solid border-black">{{$product->name}}</h2>
                             <p class="card-text">{{$product->description}}</p>
