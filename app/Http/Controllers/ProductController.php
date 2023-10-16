@@ -102,7 +102,7 @@ class ProductController extends Controller
         if($request->image){
             Storage::delete($product->img);
             $product->update([
-                'img' => $request->file('image')->store('public/img'),
+                'img' => $request->file('image')->store('app/public_html/img'),
             ]);
         }
         return redirect(route('admin.dashboard'))->with('message', 'Article updated successfully');
